@@ -1,0 +1,117 @@
+body {
+	text-align: center;
+	font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+	transition: 0.3s;
+}
+nav {
+	display: flex;
+	backdrop-filter: blur(10px);
+	position: fixed;
+	width:100%;
+	padding:10px;
+	color:white;
+	background: rgb(49, 48, 37, 0.7);
+	top:0;
+	right:0;
+}
+nav span {
+	flex:1;
+}
+.back {
+	background: url("https://cdn.pixabay.com/photo/2016/03/26/13/09/workspace-1280538_1280.jpg");
+	color:white;
+	padding:50px;
+}
+.accent {
+	color:deepskyblue;
+}
+.back a {
+	color:white;
+	text-decoration:none;
+	border-bottom:white 2px solid;
+	transition:0.3s;
+}
+.back a:hover {
+	text-shadow:0px 0px 10px white;
+}
+.back a:active {
+	text-shadow:0px 0px 15px deepskyblue;
+}
+::selection {
+	background:deepskyblue;
+	color:white;
+}
+a {
+	color:black;
+	text-decoration:none;
+	border-bottom:black 2px solid;
+	transition:0.3s;
+	cursor:pointer;
+}
+a:hover {
+	text-shadow:0px 0px 10px black;
+}
+a:active {
+	text-shadow:0px 0px 15px deepskyblue;
+}
+nav a {
+	color:white;
+	text-decoration:none;
+	border-bottom:white 2px solid;
+	transition:0.3s;
+}
+nav a:hover {
+	text-shadow:0px 0px 10px white;
+}
+nav a:active {
+	text-shadow:0px 0px 15px deepskyblue;
+}
+.dark-mode {
+  background-color: #223;
+  color: white;
+}
+.dark-mode a {
+	color:white;
+	border-bottom: white 2px solid;
+}
+.dark-mode a:hover {
+	text-shadow:0px 0px 10px white;
+}
+.dark-mode a:active {
+	text-shadow:0px 0px 15px deepskyblue;
+}
+button {
+	background: white;
+	border:black 2px solid;
+	padding:4px 10px;
+	border-radius:4px;
+	cursor: pointer;
+	transition: 0.3s;
+	margin-bottom: 2px;
+}
+button:hover {
+	border: #002aff 2px solid;
+	color:#002aff;
+}
+button:active {
+	background: #002aff;
+	color:white;
+}
+.dark-mode button {
+	background:#334;
+	border:lightgrey 2px solid;
+	padding:4px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: 0.3s;
+	color:white;
+	margin-bottom: 2px;
+}
+.dark-mode button:hover {
+	border:deepskyblue 2px solid;
+	color:deepskyblue;
+}
+.dark-mode button:active {
+	background:deepskyblue;
+	color:black;
+}
