@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h3>Score: <span id='score'>0</span></h3>
+  <canvas id="canvas" height='800px' width="1200px"></canvas>
+  <script>
+    var levels = ["Eater","Rammer","Smasher","Mega-Smasher", "Demolisher", "Bulldozer", "Ultra-Bulldozer", "Wrecking Ball", "Ultra Wrecking Ball", "Ultimate Wrecking Ball", "Dynamite", "Black hole", "Ultra Black Hole", "Ultimate Black hole"]
+    //var lscore = [20,]
+    const c = document.getElementById('canvas');
+    const ctx = c.getContext('2d');
+    const scoreelm = document.getElementById('score')
+
+    function circle(x, y, size,ischar) {
+      ctx.beginPath();
+      if (ischar) {
+        ctx.fillStyle = "red"
+      }
+      ctx.arc(x, y, size, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.fillStyle = 'black'
+    }
+
+    function autocircle() {
+      circle(0, 0, 10, true);
+    }
+
+    function clr() {
+      ctx.clearRect(0, 0, c.width, c.height);
+    }
+
+    autocircle();
+
+    var lastleft = 10;
+    var lasttop = 10;
+    var size = 10;
+    var foods = [{x: 30, y: 10}]; // Food positions
+    var grinders = [] // Grinders position
+
+    function distance(x1, y1, x2, y2) {
+      return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+    }
+
+    document.onkeydown = function (e) {
+      clr();
+
+      foods.forEach(function (food, index) {
+        const foodRadius = 1/(size*size);
+        const dotRadius = size;
+
+        if (distance(food.x, food.y, lastleft, lasttop) < foodRadius + dotRadius) {
+          size += 1; // Increase the size
+          foods.splice(index, 1); // Remove the food
+        } else {
+          circle(food.x, food.y, 5, false); // Draw food
+        }
+      });
+      if (e.key == 'd') {
+        circle(lastleft, lasttop, size,true);
+        lastleft+=2;
+      } else if (e.key == 's') {
+        circle(lastleft, lasttop, size,true);
+        lasttop+=2;
+      } else if (e.key == 'r') {
+        alert(confirm(prompt('Are you sure you want to restart?')));
+      } else if (e.key == 'w') {
+        circle(lastleft, lasttop, size,true);
+        lasttop -= 2;
+      } else if (e.key == 'a') {
+        circle(lastleft, lasttop, size,true);
+        lastleft -= 2;
+      } else {
+        circle(lastleft, lasttop, size,true);
+      }
+    };
+
+    // Generate random food positions
+    function generateFood() {
+      const maxX = c.width - 10;
+      const maxY = c.height - 10;
+      const foodX = Math.floor(Math.random() * maxX) + 5;
+      const foodY = Math.floor(Math.random() * maxY) + 5;
+      foods.push({x: foodX, y: foodY});
+      scoreelm.innerText = size
+    }
+
+    setInterval(generateFood, 2000); // Generate food every 0.25 seconds
+
+
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
