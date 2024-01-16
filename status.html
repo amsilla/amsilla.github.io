@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Amsilla Status</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      margin:0;
+      padding:0;
+      overflow: none;
+    }
+    .top {
+      padding:10px;
+      background: #eeeeee;
+      position:sticky;
+      top:0;
+      left:0;
+    }
+    fieldset {
+      border:2px solid black;
+      border-radius:10px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+  <div class="top">
+    <h1>Amsilla.com Status</h1>
+    <button onclick="window.location.replace('https://amsilla.com')">Back to Amsilla</button>
+    <p><span id="d">Enable Javascript to view the status.</span> Having trouble? Please <a href="#">contact support</a>.</p>
+  </div>
+
+  <div>
+    <div id="con">
+      <p>Enable Javascript to view the status page.</p>
+    </div>
+  </div>
+  <script>
+    var isOperational = {
+      "Amsilla Code": true,
+      "Amsilla Code Deployments": true,
+      "Amsilla Code Forum": true
+    }
+    var isAllRunning = true;
+    document.getElementById('con').innerHTML = ""
+    for (var i in isOperational) {
+      if (isOperational[i] != true) {
+        isAllRunning = false;
+      }
+      if (isOperational[i] == true) {
+        var nxt = `<span style='color:green;' class="material-symbols-outlined">
+check_circle
+</span>`
+      } else {
+        var nxt = isOperational[i]
+      }
+      document.getElementById('con').innerHTML += `
+      <fieldset>
+      <legend>${i}</legend>
+      <p>${nxt}</p>
+      </fieldset>
+      `
+    }
+    if (isAllRunning) {
+      document.getElementById("d").innerText = "All systems operational."
+      document.getElementsByClassName("top")[0].style.background = "#3cec3c"
+    } else {
+      document.getElementById("d").innerText = "Some systems are down."
+    }
+  </script>
+</body>
+
+</html>
