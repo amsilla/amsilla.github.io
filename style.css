@@ -50,3 +50,14 @@ a {
   background:#021d02;
   color:white;
 }
+button {
+  padding:10px;
+  background:deepskyblue;
+  color:black;
+  transition:0.3s;
+  border-radius:5px;
+  cursor:pointer;
+}
+button:hover {
+  background:skyblue;
+}
