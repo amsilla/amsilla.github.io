@@ -68,7 +68,7 @@
         isAllRunning = false;
       }
       if (isOperational[i] == true) {
-        var nxt = `<span style='color:green;float:right;' class="material-symbols-outlined">
+        var nxt = `<span style='color:green;'>Operational</span><span style='color:green;float:right;' class="material-symbols-outlined">
 check_circle
 </span>`
       } else {
@@ -79,7 +79,6 @@ error
       document.getElementById('con').innerHTML += `
       <fieldset>
       <legend>${i}</legend>
-      <p>Worldwide infrastructure for ${i}</p>
       ${nxt}
       </fieldset>
       `
