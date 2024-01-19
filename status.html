@@ -36,15 +36,12 @@
       border-radius:10px;
       box-sizing: border-box; /* Include padding and border in the element's total width */
       width: 45%;
-      float: left; /* Float the fieldsets to make them display side-by-side */
       margin-right: 5%; /* Add a margin to create some space between the fieldsets */
     }
 
     /* Clear the float to prevent subsequent elements from being affected */
-    .con::after {
-      content: "";
-      display: table;
-      clear: both;
+    .con {
+      display:flex;
     }
 
 
