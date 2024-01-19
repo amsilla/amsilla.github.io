@@ -34,9 +34,6 @@
     fieldset {
       border:2px solid black;
       border-radius:10px;
-      box-sizing: border-box; /* Include padding and border in the element's total width */
-      width: 45%;
-      margin-right: 5%; /* Add a margin to create some space between the fieldsets */
     }
 
 
@@ -62,7 +59,6 @@
       "Amsilla Code Deployments": true,
       "Amsilla Code Forum": true
     }
-    var dc = 'left';
     var isAllRunning = true;
     document.getElementById('con').innerHTML = ""
     for (var i in isOperational) {
@@ -77,14 +73,12 @@ check_circle
         var nxt = isOperational[i]
       }
       document.getElementById('con').innerHTML += `
-      <fieldset style="float:${dc};">
+      <fieldset>
       <legend>${i}</legend>
       <p>Worldwide infrastructure for ${i}</p>
       ${nxt}
       </fieldset>
       `
-      if (dc == 'left') {dc = 'right'}
-      if (dc == 'right') {dc = 'left'}
     }
     if (isAllRunning) {
       document.getElementById("d").innerText = "All systems operational."
