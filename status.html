@@ -39,11 +39,6 @@
       margin-right: 5%; /* Add a margin to create some space between the fieldsets */
     }
 
-    /* Clear the float to prevent subsequent elements from being affected */
-    .con {
-      display:flex;
-    }
-
 
   </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -67,6 +62,7 @@
       "Amsilla Code Deployments": true,
       "Amsilla Code Forum": true
     }
+    var dc = 'left';
     var isAllRunning = true;
     document.getElementById('con').innerHTML = ""
     for (var i in isOperational) {
@@ -81,12 +77,14 @@ check_circle
         var nxt = isOperational[i]
       }
       document.getElementById('con').innerHTML += `
-      <fieldset>
+      <fieldset style="float:${dc};">
       <legend>${i}</legend>
       <p>Worldwide infrastructure for ${i}</p>
       ${nxt}
       </fieldset>
       `
+      if (dc == 'left') {dc = 'right'}
+      if (dc == 'right') {dc = 'left'}
     }
     if (isAllRunning) {
       document.getElementById("d").innerText = "All systems operational."
