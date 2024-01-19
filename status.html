@@ -57,7 +57,9 @@
     var isOperational = {
       "Amsilla Code": true,
       "Amsilla Code Deployments": true,
-      "Amsilla Code Forum": true
+      "Amsilla Code Forum": true,
+      "Amsilla Stats": "The issue between Stats and Stats Pages has been identified and is being resolved.",
+      "Amsilla Stats Pages": "The issue between Stats and Stats Pages has been identified and is being resolved."
     }
     var isAllRunning = true;
     document.getElementById('con').innerHTML = ""
@@ -70,7 +72,7 @@
 check_circle
 </span>`
       } else {
-        var nxt = isOperational[i]
+        var nxt = `<span style='color:red;float:right;'>${isOperational[i]}</span>`
       }
       document.getElementById('con').innerHTML += `
       <fieldset>
