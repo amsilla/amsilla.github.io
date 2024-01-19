@@ -72,7 +72,9 @@
 check_circle
 </span>`
       } else {
-        var nxt = `<span style='color:red;float:right;'>${isOperational[i]}</span>`
+        var nxt = `<span style='color:red;'>${isOperational[i]}</span><span style='color:red;float:right;' class="material-symbols-outlined">
+error
+</span>`
       }
       document.getElementById('con').innerHTML += `
       <fieldset>
