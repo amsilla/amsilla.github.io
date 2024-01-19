@@ -20,11 +20,6 @@
       top:0;
       left:0;
     }
-    fieldset {
-      border:2px solid black;
-      border-radius:10px;
-      width:45%;
-    }
     button {
       padding:10px;
       background:deepskyblue;
@@ -36,6 +31,22 @@
     button:hover {
       background:skyblue;
     }
+    fieldset {
+      border:2px solid black;
+      border-radius:10px;
+      box-sizing: border-box; /* Include padding and border in the element's total width */
+      width: 45%;
+      float: left; /* Float the fieldsets to make them display side-by-side */
+      margin-right: 5%; /* Add a margin to create some space between the fieldsets */
+    }
+
+    /* Clear the float to prevent subsequent elements from being affected */
+    .con::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
 
   </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
