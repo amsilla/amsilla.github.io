@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Amsilla.com Media Player 2.0</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<h1>Amsilla.com Media Player 2.0</h1>
+	<noscript>
+		<h1>Please enable javascript for this to work.</h1>
+	</noscript>
+	<h2>works with all audio&video file types</h2>
+	<a href="index.html"><button>Go Home</button></a><br><br>
+	<button onclick="sub()">Add Subtitles</button>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<input type="file" id="upload" class="choose" /><br><br><br><br>
+	<video id="audio" controls>
+		<source src="" id="src" />
+	</video>
+	<br><br><br>
+	<h1>Options</h1>
+	<button onclick="changetheme('white', 'black')">Light theme</button>
+	<button onclick="changetheme('#333333', 'white')">Dark Theme</button>
+	<button onclick="custom()">Custom</button>
+	<button onclick="reset()">reset</button>
+	<br><br><br>
+	<h1>Other Apps</h1>
+	<a href="https://amsilla.com"><button>Amsilla</button></a>
+	<br><br><br>
+	<h1>Made by Amsilla.com</h1>
+	<script src="script.js"></script>
+
+</body>
+
+</html>
