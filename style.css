@@ -50,3 +50,6 @@ a {
   background:#021d02;
   color:white;
 }
+fieldset {
+  margin-bottom:10px;
+}
